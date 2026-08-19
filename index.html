@@ -48,12 +48,12 @@
     position:relative;overflow:hidden;
     min-height:100vh;min-height:100svh;
     display:flex;flex-direction:column;
-    background:var(--roxo-700) url('img/hero-fundo.jpg') center bottom / cover no-repeat;
+    background:var(--roxo-700) url('img/hero-fundo.jpg') center 72% / cover no-repeat;
   }
   .bloco-hero::before{
     content:'';position:absolute;inset:0;pointer-events:none;
     background-image:
-      radial-gradient(ellipse 980px 520px at 50% 44%, rgba(28,6,74,.68), transparent 72%),
+      radial-gradient(ellipse 1000px 540px at 50% 50%, rgba(28,6,74,.68), transparent 72%),
       linear-gradient(180deg,
         rgba(34,7,86,.44) 0%,
         rgba(40,10,104,.26) 16%,
@@ -69,7 +69,7 @@
     background-size:100% 100%, 100% 100%, 22px 22px;
   }
 
-  .topo{padding:26px 0 0;position:relative;z-index:2}
+  .topo{padding:26px 0 0;position:absolute;top:0;left:0;right:0;z-index:5}
   .topo-in{display:flex;align-items:center;justify-content:space-between;gap:20px}
   .marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--branco)}
   .marca-selo{width:44px;height:44px;border-radius:50%;border:2.5px solid var(--amarelo);display:grid;place-items:center;flex:0 0 auto}
@@ -83,7 +83,7 @@
   }
   .topo-cta:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.75)}
 
-  .hero{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;padding:clamp(20px,3vh,40px) 0 clamp(40px,7vh,80px);position:relative}
+  .hero{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;padding:90px 0;position:relative}
   .texto-central{max-width:840px;display:flex;flex-direction:column;align-items:center;position:relative;z-index:2}
 
   .etiqueta{display:inline-flex;align-items:center;gap:9px;font-family:var(--mao);font-weight:700;font-size:15px;color:var(--amarelo);margin-bottom:24px}
@@ -134,6 +134,19 @@
     opacity:0;animation:surgir .5s ease 1.15s forwards;
   }
   @keyframes surgir{from{opacity:0;transform:rotate(3.2deg) translateY(14px) scale(.94)}to{opacity:1;transform:rotate(3.2deg) translateY(0) scale(1)}}
+
+  .rolar{
+    position:absolute;left:50%;bottom:clamp(20px,4.5vh,44px);transform:translateX(-50%);
+    display:flex;flex-direction:column;align-items:center;gap:9px;z-index:4;
+    font-family:var(--mao);font-weight:700;font-size:14.5px;color:rgba(255,255,255,.62);
+    text-decoration:none;white-space:nowrap;
+    opacity:0;animation:surgirRolar .6s ease 1.5s forwards;
+    transition:color .2s;
+  }
+  .rolar:hover{color:var(--amarelo)}
+  .rolar svg{width:22px;height:26px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;animation:balanco 2.4s ease-in-out infinite}
+  @keyframes surgirRolar{to{opacity:1}}
+  @keyframes balanco{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
 
   .sobe{opacity:0;transform:translateY(20px);animation:sobe .7s cubic-bezier(.2,.7,.3,1) forwards}
   @keyframes sobe{to{opacity:1;transform:translateY(0)}}
@@ -433,6 +446,7 @@
     }
   }
   @media (max-width:600px){
+    .rolar{display:none}
     .wrap{padding:0 20px}
     .topo-cta{display:none}
     h1{font-size:2.45rem}
@@ -519,6 +533,11 @@
           Sem cadastro, sem compromisso — é só chamar no WhatsApp.
         </p>
       </div>
+
+      <a class="rolar" href="#projetos">
+        role e veja o que eles constroem
+        <svg viewBox="0 0 24 28"><path d="M12 3v19M5 15l7 7 7-7"/></svg>
+      </a>
     </section>
   </main>
 
