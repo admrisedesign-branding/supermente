@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Super Mente — Clube Maker | Manaus</title>
+<meta name="description" content="Escola de habilidades para crianças de 7 a 12 anos no Sumaúma Park Shopping, Manaus. Aula experimental gratuita.">
+<meta name="theme-color" content="#4A15B5">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&family=Shantell+Sans:ital,wght@0,600;0,700;1,700&display=swap" rel="stylesheet">
@@ -48,7 +53,7 @@
   .bloco-hero::before{
     content:'';position:absolute;inset:0;pointer-events:none;
     background-image:
-      radial-gradient(ellipse 900px 460px at 50% 26%, rgba(28,6,74,.66), transparent 72%),
+      radial-gradient(ellipse 980px 520px at 50% 44%, rgba(28,6,74,.68), transparent 72%),
       linear-gradient(180deg,
         rgba(34,7,86,.46) 0%,
         rgba(40,10,104,.30) 20%,
@@ -75,7 +80,7 @@
   }
   .topo-cta:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.75)}
 
-  .hero{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:flex-start;padding:clamp(24px,5vh,58px) 0 0;position:relative}
+  .hero{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;padding:clamp(24px,4vh,48px) 0 clamp(120px,17vh,190px);position:relative}
   .texto-central{max-width:840px;display:flex;flex-direction:column;align-items:center;position:relative;z-index:2}
 
   .etiqueta{display:inline-flex;align-items:center;gap:9px;font-family:var(--mao);font-weight:700;font-size:15px;color:var(--amarelo);margin-bottom:24px}
@@ -134,17 +139,14 @@
 
   .faixa{
     position:absolute;left:0;right:0;bottom:0;z-index:3;
-    border-top:1px solid rgba(255,255,255,.16);
-    background:rgba(26,5,68,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-    transform:translateY(101%);opacity:0;
-    transition:transform .5s cubic-bezier(.2,.75,.3,1), opacity .4s ease;
+    border-top:1px solid rgba(255,255,255,.14);
+    background:rgba(24,5,64,.66);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
   }
-  .faixa.on{transform:none;opacity:1}
-  .faixa-in{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:20px 0 22px}
+  .faixa-in{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:34px 0 36px}
   .dado{display:flex;align-items:center;gap:13px}
   .dado svg{width:26px;height:26px;flex:0 0 auto;stroke:var(--amarelo);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  .dado-t{font-family:var(--display);font-weight:700;font-size:16.5px;line-height:1.15;display:block}
-  .dado-d{font-size:13.5px;color:rgba(255,255,255,.6);margin-top:2px;display:block}
+  .dado-t{font-family:var(--display);font-weight:700;font-size:17.5px;line-height:1.2;display:block}
+  .dado-d{font-size:14px;color:rgba(255,255,255,.62);margin-top:4px;display:block;line-height:1.45}
 
   /* ================= SEÇÕES ================= */
   .sec{padding:104px 0;position:relative}
@@ -366,7 +368,7 @@
   .resp{padding:0 44px 28px 0;font-size:16px;line-height:1.68;color:rgba(255,255,255,.74);max-width:44em}
 
   /* --- 11. CTA FINAL --- */
-  .final{text-align:center;max-width:22em;margin:0 auto}
+  .final{text-align:center;max-width:26em;margin:0 auto}
   .final h2{font-size:clamp(2.2rem,4.6vw,3.5rem)}
   .final .criar{color:var(--roxo-700)}
   .final-sub{font-size:17px;line-height:1.6;color:rgba(23,8,46,.7);margin-top:22px}
@@ -404,7 +406,7 @@
   }
   @media (max-width:940px){
     .hero{padding:40px 0 32px}
-    .faixa-in{grid-template-columns:1fr;gap:14px;padding:16px 0 18px}
+    .faixa-in{grid-template-columns:1fr;gap:20px;padding:26px 0 28px}
     .sub{max-width:none}
     .duas{grid-template-columns:1fr;gap:44px}
     .duas .foto-claro{max-width:470px}
@@ -918,8 +920,8 @@
 <section class="sec sec-amarela" id="agendar">
   <div class="wrap">
     <div class="final rev">
-      <h2>Traga ele numa aula.<br>Depois a gente<br><span class="criar">conversa<svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M4 9.5c40-6 84-7 130-4 26 1.7 44 3.4 66 1" stroke="#4A15B5" stroke-width="4.5" stroke-linecap="round" fill="none"/></svg></span></h2>
-      <p class="final-sub">Uma aula completa, com a turma. Sem custo e sem compromisso.</p>
+      <h2>Traga ele numa <span class="criar">aula.<svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M3 9.5c22-6 46-7 72-4 15 1.7 26 3.4 42 1" stroke="#4A15B5" stroke-width="4.5" stroke-linecap="round" fill="none"/></svg></span></h2>
+      <p class="final-sub">Depois a gente conversa. Uma aula completa, com a turma, sem custo e sem compromisso.</p>
     </div>
 
     <!-- FORMULÁRIO INTELIGENTE → Capta -->
@@ -1160,17 +1162,6 @@ var CAPTA = {
   });
 
   mostrar(1);
-})();
-</script>
-
-<script>
-/* a faixa do hero só entra depois do primeiro scroll — a imagem respira sozinha na abertura */
-(function(){
-  var faixa = document.querySelector('.faixa');
-  if(!faixa) return;
-  function checar(){ faixa.classList.toggle('on', window.scrollY > 40); }
-  window.addEventListener('scroll', checar, {passive:true});
-  checar();
 })();
 </script>
 
