@@ -55,12 +55,15 @@
     background-image:
       radial-gradient(ellipse 980px 520px at 50% 44%, rgba(28,6,74,.68), transparent 72%),
       linear-gradient(180deg,
-        rgba(34,7,86,.46) 0%,
-        rgba(40,10,104,.30) 20%,
-        rgba(52,14,132,.16) 40%,
-        rgba(52,14,132,.30) 60%,
-        rgba(45,11,116,.72) 80%,
-        rgba(42,9,101,.96) 93%,
+        rgba(34,7,86,.44) 0%,
+        rgba(40,10,104,.26) 16%,
+        rgba(50,13,128,.12) 34%,
+        rgba(48,12,124,.24) 52%,
+        rgba(46,11,120,.46) 66%,
+        rgba(44,10,112,.70) 76%,
+        rgba(42,9,101,.88) 85%,
+        rgba(42,9,101,.98) 92%,
+        var(--roxo-900) 97%,
         var(--roxo-900) 100%),
       radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px);
     background-size:100% 100%, 100% 100%, 22px 22px;
@@ -80,7 +83,7 @@
   }
   .topo-cta:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.75)}
 
-  .hero{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;padding:clamp(24px,4vh,48px) 0 clamp(120px,17vh,190px);position:relative}
+  .hero{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;padding:clamp(24px,4vh,48px) 0 clamp(150px,21vh,240px);position:relative}
   .texto-central{max-width:840px;display:flex;flex-direction:column;align-items:center;position:relative;z-index:2}
 
   .etiqueta{display:inline-flex;align-items:center;gap:9px;font-family:var(--mao);font-weight:700;font-size:15px;color:var(--amarelo);margin-bottom:24px}
@@ -137,12 +140,8 @@
   .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.28s}
   .d4{animation-delay:.4s}.d5{animation-delay:.52s}.d6{animation-delay:.1s}
 
-  .faixa{
-    position:absolute;left:0;right:0;bottom:0;z-index:3;
-    border-top:1px solid rgba(255,255,255,.14);
-    background:rgba(24,5,64,.66);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  }
-  .faixa-in{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:34px 0 36px}
+  .faixa{position:absolute;left:0;right:0;bottom:0;z-index:3;background:none;border:none}
+  .faixa-in{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding:0 0 clamp(34px,5vh,54px)}
   .dado{display:flex;align-items:center;gap:13px}
   .dado svg{width:26px;height:26px;flex:0 0 auto;stroke:var(--amarelo);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .dado-t{font-family:var(--display);font-weight:700;font-size:17.5px;line-height:1.2;display:block}
@@ -368,7 +367,7 @@
   .resp{padding:0 44px 28px 0;font-size:16px;line-height:1.68;color:rgba(255,255,255,.74);max-width:44em}
 
   /* --- 11. CTA FINAL --- */
-  .final{text-align:center;max-width:26em;margin:0 auto}
+  .final{text-align:center;max-width:22em;margin:0 auto}
   .final h2{font-size:clamp(2.2rem,4.6vw,3.5rem)}
   .final .criar{color:var(--roxo-700)}
   .final-sub{font-size:17px;line-height:1.6;color:rgba(23,8,46,.7);margin-top:22px}
@@ -406,7 +405,7 @@
   }
   @media (max-width:940px){
     .hero{padding:40px 0 32px}
-    .faixa-in{grid-template-columns:1fr;gap:20px;padding:26px 0 28px}
+    .faixa-in{grid-template-columns:1fr;gap:16px;padding:0 0 30px}
     .sub{max-width:none}
     .duas{grid-template-columns:1fr;gap:44px}
     .duas .foto-claro{max-width:470px}
@@ -417,12 +416,14 @@
     .bloco-hero::before{
       background-image:
         linear-gradient(180deg,
-          rgba(34,7,86,.97) 0%,
-          rgba(40,10,104,.94) 32%,
-          rgba(56,15,144,.74) 52%,
-          rgba(74,21,181,.26) 74%,
-          rgba(74,21,181,.08) 88%,
-          rgba(42,9,101,.6) 100%),
+          rgba(34,7,86,.62) 0%,
+          rgba(40,10,104,.40) 22%,
+          rgba(52,14,132,.20) 44%,
+          rgba(48,12,124,.40) 62%,
+          rgba(44,10,112,.72) 76%,
+          rgba(42,9,101,.94) 88%,
+          var(--roxo-900) 96%,
+          var(--roxo-900) 100%),
         radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px);
       background-size:100% 100%, 22px 22px;
     }
@@ -545,7 +546,7 @@
 </div>
 
 <!-- ============ 2. A DOR ============ -->
-<section class="sec sec-escuro">
+<section class="sec sec-escuro" style="padding-top:clamp(56px,9vh,96px)">
   <div class="wrap duas">
     <div class="rev">
       <div class="foto-dor">
@@ -920,8 +921,8 @@
 <section class="sec sec-amarela" id="agendar">
   <div class="wrap">
     <div class="final rev">
-      <h2>Traga ele numa <span class="criar">aula.<svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M3 9.5c22-6 46-7 72-4 15 1.7 26 3.4 42 1" stroke="#4A15B5" stroke-width="4.5" stroke-linecap="round" fill="none"/></svg></span></h2>
-      <p class="final-sub">Depois a gente conversa. Uma aula completa, com a turma, sem custo e sem compromisso.</p>
+      <h2>Traga ele numa aula.<br>Depois a gente<br><span class="criar">conversa<svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M4 9.5c40-6 84-7 130-4 26 1.7 44 3.4 66 1" stroke="#4A15B5" stroke-width="4.5" stroke-linecap="round" fill="none"/></svg></span></h2>
+      <p class="final-sub">Uma aula completa, com a turma. Sem custo e sem compromisso.</p>
     </div>
 
     <!-- FORMULÁRIO INTELIGENTE → Capta -->
