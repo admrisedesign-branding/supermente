@@ -1,0 +1,70 @@
+{
+  "versao": 1,
+  "negocio": "Super Mente — Escola de Habilidades",
+  "slug": "supermente-manaus",
+  "ramo": "educacao",
+  "formulario": "Aula experimental — Clube Maker",
+  "atualizado_em": "2026-08-19",
+  "perguntas": [
+    {
+      "ordem": 1,
+      "campo": "idade",
+      "titulo": "Quantos anos tem seu filho?",
+      "ajuda": "As turmas são separadas por faixa — cada uma trabalha em um nível diferente.",
+      "tipo": "escolha_unica",
+      "obrigatoria": true,
+      "opcoes": [
+        { "rotulo": "7 a 8 anos", "valor": "7 a 8 anos", "pontos": 8 },
+        { "rotulo": "9 a 10 anos", "valor": "9 a 10 anos", "pontos": 10 },
+        { "rotulo": "11 a 12 anos", "valor": "11 a 12 anos", "pontos": 9 },
+        { "rotulo": "Ainda não tem 7, ou já passou dos 12", "valor": "Fora da faixa de 7 a 12", "pontos": 2 }
+      ]
+    },
+    {
+      "ordem": 2,
+      "campo": "motivo",
+      "titulo": "O que te fez procurar uma atividade assim?",
+      "ajuda": "Não tem resposta certa. Ajuda o professor a saber por onde começar com ele.",
+      "tipo": "escolha_unica",
+      "obrigatoria": true,
+      "opcoes": [
+        { "rotulo": "Ele passa tempo demais no celular", "valor": "Quer tirar a criança da tela", "pontos": 9 },
+        { "rotulo": "Ele já é apaixonado por tecnologia", "valor": "Criança já ama tecnologia", "pontos": 10 },
+        { "rotulo": "Quero que ele resolva mais coisas sozinho", "valor": "Quer desenvolver autonomia", "pontos": 8 },
+        { "rotulo": "Procuro uma atividade boa pro contraturno", "valor": "Quer atividade extracurricular", "pontos": 6 }
+      ]
+    },
+    {
+      "ordem": 3,
+      "campo": "quando",
+      "titulo": "Quando você quer que ele comece?",
+      "tipo": "escolha_unica",
+      "obrigatoria": true,
+      "opcoes": [
+        { "rotulo": "Essa semana, se tiver vaga", "valor": "Quer começar essa semana", "pontos": 30 },
+        { "rotulo": "Ainda esse mês", "valor": "Quer começar esse mês", "pontos": 20 },
+        { "rotulo": "No próximo semestre", "valor": "Próximo semestre", "pontos": 8 },
+        { "rotulo": "Só estou pesquisando por enquanto", "valor": "Só pesquisando", "pontos": 2 }
+      ]
+    },
+    {
+      "ordem": 4,
+      "campo": "dados",
+      "titulo": "Pra onde mandamos os horários com vaga?",
+      "ajuda": "O professor responde pessoalmente, no WhatsApp.",
+      "tipo": "dados_contato",
+      "obrigatoria": true,
+      "campos": [
+        { "campo": "nome", "rotulo": "Seu nome", "tipo": "texto", "obrigatorio": true },
+        { "campo": "telefone", "rotulo": "Seu WhatsApp", "tipo": "telefone", "obrigatorio": true },
+        { "campo": "nome_crianca", "rotulo": "Nome do seu filho", "tipo": "texto", "obrigatorio": false }
+      ]
+    }
+  ],
+  "destino": {
+    "endpoint": "https://capta.riseagencia.com/api/capta-ingest",
+    "origem": "site",
+    "whatsapp": "5592981035003",
+    "mensagem_pos_envio": "Oi! Quero agendar a aula experimental do Clube Maker."
+  }
+}
