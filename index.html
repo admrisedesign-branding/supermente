@@ -39,14 +39,24 @@
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:1}
 
   /* ================= BLOCO HERO ================= */
-  .bloco-hero{position:relative;overflow:hidden}
+  .bloco-hero{
+    position:relative;overflow:hidden;
+    min-height:100vh;min-height:100svh;
+    display:flex;flex-direction:column;
+    background:var(--roxo-700) url('img/hero-fundo.jpg') center bottom / cover no-repeat;
+  }
   .bloco-hero::before{
     content:'';position:absolute;inset:0;pointer-events:none;
     background-image:
-      radial-gradient(circle at 78% 12%, rgba(112,66,238,.55), transparent 55%),
-      radial-gradient(circle at 8% 88%, rgba(42,9,101,.75), transparent 50%),
-      radial-gradient(rgba(255,255,255,.16) 1px, transparent 1px);
-    background-size:100% 100%, 100% 100%, 22px 22px;
+      linear-gradient(180deg,
+        rgba(34,7,86,.96) 0%,
+        rgba(44,11,114,.92) 24%,
+        rgba(58,16,148,.68) 44%,
+        rgba(74,21,181,.22) 64%,
+        rgba(74,21,181,.05) 84%,
+        rgba(42,9,101,.55) 100%),
+      radial-gradient(rgba(255,255,255,.11) 1px, transparent 1px);
+    background-size:100% 100%, 22px 22px;
   }
 
   .topo{padding:26px 0 0;position:relative;z-index:2}
@@ -63,14 +73,8 @@
   }
   .topo-cta:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.75)}
 
-  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:74px 0 58px;position:relative}
+  .hero{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:flex-start;padding:clamp(26px,5.5vh,64px) 0 40px;position:relative}
   .texto-central{max-width:840px;display:flex;flex-direction:column;align-items:center;position:relative;z-index:2}
-  .rabisco-hero{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible}
-  .rabisco-hero path,.rabisco-hero circle,.rabisco-hero ellipse{
-    fill:none;stroke:rgba(255,255,255,.62);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;
-    stroke-dasharray:1;stroke-dashoffset:1;animation:desenhar 1s cubic-bezier(.6,.05,.3,1) forwards;
-  }
-  .rabisco-hero .am{stroke:rgba(255,198,30,.85);stroke-width:3}
 
   .etiqueta{display:inline-flex;align-items:center;gap:9px;font-family:var(--mao);font-weight:700;font-size:15px;color:var(--amarelo);margin-bottom:24px}
   .etiqueta .risco{width:34px;height:8px}
@@ -126,7 +130,10 @@
   .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.28s}
   .d4{animation-delay:.4s}.d5{animation-delay:.52s}.d6{animation-delay:.1s}
 
-  .faixa{border-top:1px solid rgba(255,255,255,.16);position:relative;z-index:1}
+  .faixa{
+    border-top:1px solid rgba(255,255,255,.18);position:relative;z-index:2;
+    background:rgba(28,6,72,.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  }
   .faixa-in{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:26px 0 42px}
   .dado{display:flex;align-items:center;gap:13px}
   .dado svg{width:26px;height:26px;flex:0 0 auto;stroke:var(--amarelo);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -392,13 +399,27 @@
     .logi{grid-template-columns:1fr;gap:44px}
   }
   @media (max-width:940px){
-    .hero{padding:52px 0 44px}
-    .rabisco-hero{display:none}
+    .hero{padding:40px 0 32px}
     .faixa-in{grid-template-columns:1fr;gap:22px;padding:24px 0 36px}
     .sub{max-width:none}
     .duas{grid-template-columns:1fr;gap:44px}
     .duas .foto-claro{max-width:470px}
     .sec{padding:78px 0}
+  }
+  @media (max-width:760px){
+    .bloco-hero{background-image:url('img/hero-fundo-mobile.jpg')}
+    .bloco-hero::before{
+      background-image:
+        linear-gradient(180deg,
+          rgba(34,7,86,.97) 0%,
+          rgba(40,10,104,.94) 32%,
+          rgba(56,15,144,.74) 52%,
+          rgba(74,21,181,.26) 74%,
+          rgba(74,21,181,.08) 88%,
+          rgba(42,9,101,.6) 100%),
+        radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px);
+      background-size:100% 100%, 22px 22px;
+    }
   }
   @media (max-width:600px){
     .wrap{padding:0 20px}
@@ -452,34 +473,6 @@
 
   <main class="wrap">
     <section class="hero">
-
-      <svg class="rabisco-hero" viewBox="0 0 1240 540" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-        <!-- lâmpada: a ideia -->
-        <path d="M96 96a30 30 0 0 1 60 0c0 13-8 21-12 27-3 4-4 8-4 13h-28c0-5-1-9-4-13-4-6-12-14-12-27Z" style="animation-delay:.5s"/>
-        <path d="M114 150h24M120 160h12" style="animation-delay:.66s"/>
-        <path class="am" d="M126 44V30M84 66 74 56M168 66l10-10" style="animation-delay:.78s"/>
-        <!-- engrenagem: o mecanismo -->
-        <circle cx="118" cy="386" r="26" style="animation-delay:.62s"/>
-        <circle cx="118" cy="386" r="9" style="animation-delay:.76s"/>
-        <path d="M118 352v-13M118 433v-13M84 386H71M165 386h-13M94 362l-9-9M151 419l-9-9M94 410l-9 9M151 353l-9 9" style="animation-delay:.84s"/>
-        <!-- foguete -->
-        <path d="M1108 74c14 8 22 22 22 38 0 14-7 26-16 34l-24-14c-3-11-3-25 0-36 4-12 10-19 18-22Z" style="animation-delay:.56s"/>
-        <path d="M1090 146c-9 4-14 12-15 22 9-1 17-5 23-11Z" style="animation-delay:.72s"/>
-        <path d="M1130 112c9 6 13 15 12 26-9-2-16-7-21-14Z" style="animation-delay:.78s"/>
-        <path class="am" d="M1097 156c-3 9-3 17 1 25M1108 160c-2 7-1 14 2 20" style="animation-delay:.9s"/>
-        <!-- planeta com anel -->
-        <circle cx="1116" cy="392" r="26" style="animation-delay:.7s"/>
-        <ellipse cx="1116" cy="392" rx="46" ry="13" transform="rotate(-18 1116 392)" style="animation-delay:.86s"/>
-        <!-- traços de circuito -->
-        <path d="M60 250h58v-34h44" style="animation-delay:.94s"/>
-        <circle cx="166" cy="216" r="6" style="animation-delay:1.06s"/>
-        <path d="M1180 250h-58v34h-44" style="animation-delay:.96s"/>
-        <circle cx="1074" cy="284" r="6" style="animation-delay:1.08s"/>
-        <!-- estrelas -->
-        <path class="am" d="M244 130l5 13 13 5-13 5-5 13-5-13-13-5 13-5Z" style="animation-delay:1s"/>
-        <path d="M1002 462l4 10 10 4-10 4-4 10-4-10-10-4 10-4Z" style="animation-delay:1.04s"/>
-        <path d="M296 452l4 9 9 4-9 4-4 9-4-9-9-4 9-4Z" style="animation-delay:1.12s"/>
-      </svg>
 
       <div class="texto-central">
         <p class="etiqueta sobe d1">
