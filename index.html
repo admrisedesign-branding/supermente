@@ -93,11 +93,9 @@
   .palco{position:relative;isolation:isolate}
   .moldura{
     position:relative;aspect-ratio:4/4.6;border-radius:26px;overflow:hidden;
-    background:repeating-linear-gradient(-45deg, rgba(255,255,255,.05) 0 14px, rgba(255,255,255,.02) 14px 28px),#43128f;
-    border:2px dashed rgba(255,255,255,.32);display:grid;place-items:center;text-align:center;
+    background:#43128f;box-shadow:0 24px 60px rgba(20,4,52,.34);
   }
-  .ph-txt{font-family:var(--texto);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);line-height:2;padding:16px}
-  .ph-txt span{display:block;font-family:var(--mao);font-size:16px;letter-spacing:0;text-transform:none;color:rgba(255,255,255,.72);margin-top:6px}
+  .moldura img,.foto-claro img{width:100%;height:100%;object-fit:cover;display:block}
 
   .rabisco{position:absolute;inset:-13% -11% -9% -12%;pointer-events:none;z-index:2;overflow:visible}
   .rabisco path,.rabisco circle{
@@ -149,12 +147,13 @@
   .sec-gelo .grifo{color:var(--roxo-700)}
 
   /* --- 2. A DOR --- */
-  .dor{text-align:center;max-width:24em;margin:0 auto}
-  .dor p{
-    font-family:var(--display);font-weight:700;
-    font-size:clamp(1.6rem,3.3vw,2.5rem);line-height:1.28;letter-spacing:-.015em;
+  .foto-dor{position:relative;aspect-ratio:4/3.5;border-radius:24px;overflow:hidden;background:#1E0650;box-shadow:0 22px 54px rgba(10,2,30,.45)}
+  .foto-dor img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.72) brightness(.86)}
+  .foto-dor::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(42,9,101,.5),transparent 62%)}
+  .dor-frase{
+    font-family:var(--display);font-weight:800;
+    font-size:clamp(1.85rem,3.6vw,2.9rem);line-height:1.16;letter-spacing:-.022em;
   }
-  .dor .fraco{color:rgba(255,255,255,.42);display:block}
   .dor-marca{font-family:var(--mao);font-style:italic;color:var(--amarelo)}
   .dor-rodape{margin-top:34px;font-size:15.5px;color:rgba(255,255,255,.55);font-family:var(--texto)}
 
@@ -169,12 +168,9 @@
   .sim{color:var(--grafite);font-weight:600}
 
   .foto-claro{
-    position:relative;aspect-ratio:4/3.4;border-radius:24px;
-    background:repeating-linear-gradient(-45deg,#EDE6FB 0 14px,#E5DBF8 14px 28px);
-    border:2px dashed #C3B2E8;display:grid;place-items:center;text-align:center;
+    position:relative;aspect-ratio:4/3.4;border-radius:24px;overflow:hidden;
+    background:#E5DBF8;box-shadow:0 14px 34px rgba(42,9,101,.13);
   }
-  .ph-claro{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#8B79B5;line-height:2;padding:16px}
-  .ph-claro span{display:block;font-family:var(--mao);font-size:15.5px;letter-spacing:0;text-transform:none;color:#6B57A0;margin-top:6px}
 
   /* --- 4. HABILIDADES --- */
   .habs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:52px}
@@ -486,10 +482,7 @@
 
       <div class="palco sobe d3">
         <div class="moldura">
-          <p class="ph-txt">
-            Foto real
-            <span>aluno do Clube Maker com o<br>projeto que ele mesmo construiu</span>
-          </p>
+          <img src="https://images.unsplash.com/photo-1603354351149-e97b9124020d?q=80&w=1400&auto=format&fit=crop" alt="Criança montando um projeto com as próprias mãos" loading="eager">
         </div>
 
         <svg class="rabisco" viewBox="0 0 400 480" fill="none" aria-hidden="true">
@@ -544,11 +537,18 @@
 
 <!-- ============ 2. A DOR ============ -->
 <section class="sec sec-escuro">
-  <div class="wrap">
-    <div class="dor rev">
-      <p>
-        <span class="fraco">Ele desbloqueia o celular mais rápido que você.</span>
-        Mas quando precisa resolver um problema sozinho, <span class="dor-marca">trava.</span>
+  <div class="wrap duas">
+    <div class="rev">
+      <div class="foto-dor">
+        <img src="https://images.unsplash.com/photo-1603354351226-d82bd4a635a3?q=80&w=1400&auto=format&fit=crop" alt="Criança absorvida na tela de um tablet" loading="lazy">
+      </div>
+    </div>
+    <div class="rev">
+      <p class="olho">o que a gente mais ouve das mães</p>
+      <p class="dor-frase">
+        Ele domina o celular.<br>
+        Mas quando precisa criar<br>
+        do zero, <span class="dor-marca">trava.</span>
       </p>
       <p class="dor-rodape">Usar tecnologia é fácil. Difícil é inventar alguma coisa com ela.</p>
     </div>
@@ -597,10 +597,7 @@
 
     <div class="rev">
       <div class="foto-claro">
-        <p class="ph-claro">
-          Foto real
-          <span>projeto de papelão em cima da mesa,<br>com as mãos da criança em ação</span>
-        </p>
+        <img src="https://images.unsplash.com/photo-1605627079912-97c3810a11a4?q=80&w=1400&auto=format&fit=crop" alt="Criança desenhando o rascunho do projeto na mesa, cercada de materiais" loading="lazy">
       </div>
     </div>
   </div>
@@ -617,32 +614,32 @@
 
     <div class="galeria">
       <div class="proj rev">
-        <div class="foto-claro"><p class="ph-claro">Foto<span>casa inteligente</span></p></div>
+        <div class="foto-claro"><img src="https://images.unsplash.com/photo-1613950190144-4f2a84c75e8c?q=80&w=1400&auto=format&fit=crop" alt="Casa inteligente feito por um aluno" loading="lazy"></div>
         <p class="proj-nome">Casa inteligente</p>
         <p class="proj-d">circuito com LED e interruptor</p>
       </div>
       <div class="proj rev">
-        <div class="foto-claro"><p class="ph-claro">Foto<span>robô de papelão</span></p></div>
+        <div class="foto-claro"><img src="https://images.unsplash.com/photo-1737228813532-9cd720824ba7?q=80&w=1400&auto=format&fit=crop" alt="Robô de papelão feito por um aluno" loading="lazy"></div>
         <p class="proj-nome">Robô de papelão</p>
         <p class="proj-d">estrutura, rodas e motor</p>
       </div>
       <div class="proj rev">
-        <div class="foto-claro"><p class="ph-claro">Foto<span>ponte de palito</span></p></div>
+        <div class="foto-claro"><img src="https://images.unsplash.com/photo-1616706161242-f1d591350d1c?q=80&w=1400&auto=format&fit=crop" alt="Ponte de palito feito por um aluno" loading="lazy"></div>
         <p class="proj-nome">Ponte de palito</p>
         <p class="proj-d">teste de carga e resistência</p>
       </div>
       <div class="proj rev">
-        <div class="foto-claro"><p class="ph-claro">Foto<span>carrinho a elástico</span></p></div>
+        <div class="foto-claro"><img src="https://images.unsplash.com/photo-1678225867994-e7a5b071ebfd?q=80&w=1400&auto=format&fit=crop" alt="Carrinho movido a elástico feito por um aluno" loading="lazy"></div>
         <p class="proj-nome">Carrinho movido a elástico</p>
         <p class="proj-d">energia acumulada e movimento</p>
       </div>
       <div class="proj rev">
-        <div class="foto-claro"><p class="ph-claro">Foto<span>braço mecânico</span></p></div>
+        <div class="foto-claro"><img src="https://images.unsplash.com/photo-1586458873452-7bdd7401eabd?q=80&w=1400&auto=format&fit=crop" alt="Braço mecânico feito por um aluno" loading="lazy"></div>
         <p class="proj-nome">Braço mecânico</p>
         <p class="proj-d">alavancas e articulação</p>
       </div>
       <div class="proj rev">
-        <div class="foto-claro"><p class="ph-claro">Foto<span>campo de futebol</span></p></div>
+        <div class="foto-claro"><img src="https://images.unsplash.com/photo-1617117206620-b01f2919ff86?q=80&w=1400&auto=format&fit=crop" alt="Jogo de futebol de mesa feito por um aluno" loading="lazy"></div>
         <p class="proj-nome">Jogo de futebol de mesa</p>
         <p class="proj-d">projeto coletivo da turma</p>
       </div>
@@ -747,7 +744,7 @@
   <div class="wrap duas">
     <div class="rev prof-foto">
       <div class="moldura">
-        <p class="ph-txt">Foto real<span>o professor com a turma,<br>no meio da aula</span></p>
+        <img src="https://images.unsplash.com/photo-1585980243496-fe29a36bd382?q=80&w=1400&auto=format&fit=crop" alt="Professor com a turma durante a aula" loading="lazy">
       </div>
       <p class="nota" style="animation:none;opacity:1;left:-14px;right:auto;bottom:7%;transform:rotate(-3deg)">quem vai estar com ele toda semana</p>
     </div>
@@ -915,11 +912,8 @@
 <section class="sec sec-amarela" id="agendar">
   <div class="wrap">
     <div class="final rev">
-      <h2>Traga ele numa aula.<br>Depois a gente <span class="criar">conversa<svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M4 9.5c40-6 84-7 130-4 26 1.7 44 3.4 66 1" stroke="#4A15B5" stroke-width="4.5" stroke-linecap="round" fill="none"/></svg></span></h2>
-      <p class="final-sub">
-        Uma aula completa, com a turma, sem custo e sem compromisso.
-        Responda quatro perguntas rápidas e a gente já chega no WhatsApp sabendo do que seu filho precisa.
-      </p>
+      <h2>Traga ele numa aula.<br>Depois a gente<br><span class="criar">conversa<svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M4 9.5c40-6 84-7 130-4 26 1.7 44 3.4 66 1" stroke="#4A15B5" stroke-width="4.5" stroke-linecap="round" fill="none"/></svg></span></h2>
+      <p class="final-sub">Uma aula completa, com a turma. Sem custo e sem compromisso.</p>
     </div>
 
     <!-- FORMULÁRIO INTELIGENTE → Capta -->
